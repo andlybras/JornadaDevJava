@@ -34,3 +34,20 @@ As classes relacionam-se, descando-se as seguintes maneiras:
 `Dependência:` é relacionamento mais fraco, ocorrendo quando uma classe usa temporariamente um objeto de outra classe para realizar uma tarefa, mas não o armazena. Isso acontece tipicamente quando um objeto é passado como parâmetro de um método. A classe ProcessadorPagamento, por exemplo, usa-um CarrinhoDeCompras no método realizarPagamento(), mas não o guarda como um atributo.  
 `Agregação:` é um relacionamento mais forte onde uma classe contém um ou mais objetos de outra classe como um campo de instância (atributo). Isso representa uma relação "tem-um" ou "tem-vários".  
 `Herança:` é um relacionamento de especialização onde uma classe (filha) herda os campos e métodos de outra classe (mãe), permitindo o reúso de código. A classe filha é-um tipo da classe mãe (um Cachorro é-um Animal) e pode usar suas funcionalidades sem precisar reprogramá-las, podendo também adicionar ou modificar comportamentos.  
+  
+> N-08  
+  
+Para trabalhar com objetos, primeiro eles são construídos com um estado inicial específico. Então são aplicados métodos a eles.  
+  
+> N-09  
+  
+Em Java, usamos construtores para construir novas instâncias (objetos). Um concstrutor é um método especial cujo propósito é construir e inicializar objetivos. Construtores são sempre chamados pelo mesmo nome da classe e, quando declarados para inicializar um novo objeto, são acompanhados pelo operador `new`.  
+
+  ```Java
+  new Date()
+  ```  
+
+> N-10  
+  
+Em Java, embora o operador new seja a forma mais comum de construir um objeto, é importante saber que nem todas as classes são projetadas para serem instanciadas dessa maneira. Um exemplo fundamental desse design é a classe LocalDate (do pacote java.time). Em vez de usar um construtor público, ela força a criação de objetos através de métodos de fábrica estáticos, como LocalDate.now() (para a data atual) ou LocalDate.of(ano, mes, dia) (para uma data específica). Essa abordagem, onde a própria classe gerencia a instanciação, é uma decisão de design deliberada que muitas vezes resulta em um código mais legível e seguro.  
+  
